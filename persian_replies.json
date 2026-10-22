@@ -1,0 +1,58 @@
+[
+  {
+    "match": "already processing",
+    "reply": ""
+  },
+  {
+    "match": "cancel success",
+    "reply": "Cancel success. If this didn't cancel in 5 minutes, then request for partial."
+  },
+  {
+    "match": "partial time has expired",
+    "reply": "Refill / Partial time expired."
+  },
+  {
+    "match": "refill limit fully used",
+    "reply": "Refill not possible, you can take partial."
+  },
+  {
+    "match": "order status is partial",
+    "reply": "Refill not possible, this order is already partial."
+  },
+  {
+    "match": "refill not possible",
+    "reply": "Refill not possible for this profile right now. Please take partial."
+  },
+  {
+    "match": "drop amount is too low",
+    "reply": "Drop amount is too low. If there is a minimum drop of 50, then I can make auto partial / auto refill."
+  },
+  {
+    "match": "cancel is not possible because the order status is completed",
+    "reply": "Order already completed."
+  },
+  {
+    "match": "partial success to (\\d+) remains",
+    "reply": "Partial Done for {1}\nSend This order on Ticket, For Update"
+  },
+  {
+    "match": "no drop detected",
+    "reply": "There is no drop."
+  },
+  {
+    "match": "current (start )?count is lower than (order )?start count",
+    "reply": "Order below start count."
+  },
+  {
+    "match": "refill success",
+    "reply": "Refill added successfully."
+  },
+  {
+    "match": "refill in progress",
+    "reply": "Refill is already in progress."
+  },
+  {
+    "match": "sent to the .{0,40} team for further review",
+    "reply": "Send Order of This Request to Ticket Right Now"
+  }
+]

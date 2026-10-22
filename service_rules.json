@@ -1,0 +1,9 @@
+[
+  {
+    "match": "instagram views",
+    "deny": {
+      "refill": "no_refill_accept",
+      "partial": "no_partial_accept"
+    }
+  }
+]

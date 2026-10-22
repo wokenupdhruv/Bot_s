@@ -1,0 +1,92 @@
+{
+  "_note": "Provider names must match the panel's provider name. platform: wa or tg. cancel_mode api = press the panel's Request Cancel button for cancels.",
+  "followcube.com": {
+    "platform": "wa",
+    "chat_id": "120363410341613029@g.us"
+  },
+  "justproviders.com": {
+    "platform": "wa",
+    "chat_id": "120363345090698451@g.us"
+  },
+  "mylikes.in": {
+    "platform": "wa",
+    "chat_id": "120363431715694731@g.us"
+  },
+  "postlikes.com": {
+    "platform": "wa",
+    "chat_id": "120363345103758863@g.us"
+  },
+  "smmbind.com": {
+    "platform": "wa",
+    "chat_id": "120363421994374643@g.us"
+  },
+  "Theroyalsmm.com": {
+    "platform": "wa",
+    "chat_id": "120363344672290510@g.us"
+  },
+  "Wowsmmpanel.com": {
+    "platform": "wa",
+    "chat_id": "120363422818337668@g.us"
+  },
+  "ytresellers.com": {
+    "platform": "wa",
+    "chat_id": "120363341840755624@g.us"
+  },
+  "smmteamindia.in": {
+    "platform": "wa",
+    "chat_id": "120363424566590343@g.us"
+  },
+  "upfollows.com": {
+    "platform": "wa",
+    "chat_id": "120363406338909121@g.us"
+  },
+  "Smmtigers.com": {
+    "platform": "wa",
+    "chat_id": "120363402117905562@g.us"
+  },
+  "my.persiansmm.com": {
+    "platform": "tg",
+    "chat_id": "-1003834687036",
+    "partial_mode": "staff",
+    "via": "userbot"
+  },
+  "buffviewer.com.fb-comment": {
+    "cancel_mode": "api"
+  },
+  "buffviewer.com.fb-livestream": {
+    "cancel_mode": "api"
+  },
+  "buffviewer.com.fb-shares": {
+    "cancel_mode": "api"
+  },
+  "buffviewer.com.fb-stories": {
+    "cancel_mode": "api"
+  },
+  "buffviewer.com.fb-story-reaction": {
+    "cancel_mode": "api"
+  },
+  "buffviewer.com.tiktokview_v2": {
+    "cancel_mode": "api"
+  },
+  "buffviewer.com.videounit": {
+    "cancel_mode": "api"
+  },
+  "buffviewer.com.videounit_v2": {
+    "cancel_mode": "api"
+  },
+  "nakrutka.com": {
+    "cancel_mode": "api"
+  },
+  "venro.ru": {
+    "cancel_mode": "api"
+  },
+  "prosmm-store.com": {
+    "platform": "tg",
+    "chat_id": "-1004454183840",
+    "via": "userbot_post"
+  },
+  "worldofsmm.com": {
+    "platform": "wa",
+    "chat_id": "120363410068802934@g.us"
+  }
+}

@@ -1,0 +1,19 @@
+# secrets & account sessions
+.env
+*.session
+*.session-journal
+wa_session*
+old_number_backup/
+
+# runtime data
+bot.db
+*.log
+
+# python
+venv/
+__pycache__/
+*.pyc
+
+# backups & OS
+*.backup*
+.DS_Store
