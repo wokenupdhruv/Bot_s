@@ -17,3 +17,5 @@ __pycache__/
 # backups & OS
 *.backup*
 .DS_Store
+*.bak*
+notify.db

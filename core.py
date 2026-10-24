@@ -649,3 +649,12 @@ def _handle(msg):
     except Exception:
         log.exception("provider group check failed")
     return _orig_handle_pg(msg)
+
+
+# --- Smooth notify ---
+try:
+    import smooth_notify as _sn
+    _sn.install(globals())
+except Exception:
+    import logging as _lg
+    _lg.getLogger('smooth_notify').exception('smooth_notify not loaded')

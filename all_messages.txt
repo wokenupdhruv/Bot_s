@@ -1,0 +1,212 @@
+===== ALL BOT MESSAGES (replies.json) =====
+
+[help]
+(BLANK - the bot says nothing)
+
+[need_login]
+Please login first. Send:  login
+
+[already_linked]
+This chat is already linked to {username}.
+
+[ask_username]
+👋 Welcome to Smoothsmm AI Support!
+
+To get started, please share your Smoothsmm username.
+
+🔐 First-time users need one-time registration. We will use a support ticket to help confirm your identity.
+
+[wrong_user]
+❌ I couldn't create your support ticket. Username not found.
+
+You have {left_text} left.
+
+[username_taken]
+This username is already linked to another chat.
+You must reset it from there first.
+
+[creating_ticket]
+⏳ Creating your Smoothsmm support ticket...
+
+[ticket_failed]
+❌ I couldn't create your support ticket. Please try again later.
+
+[otp_sent]
+✅ Support ticket created!
+
+Ticket ID: {ticket_id}
+Smoothsmm username: {username}
+
+Please check this ticket for verification instructions. Once you receive a code, send it here.
+
+[wrong_otp]
+❌ Wrong code.
+
+You have {left_text} left.
+
+[otp_expired]
+Code expired. Send  login  to start again.
+
+[locked]
+Too many wrong tries. Please wait {minutes} minutes.
+
+[linked]
+✅ Verification successful!
+
+Smoothsmm username: {username}
+Your {platform_name} registration is complete.
+
+[reset]
+(BLANK - the bot says nothing)
+
+[muted]
+(BLANK - the bot says nothing)
+
+[unmuted]
+(BLANK - the bot says nothing)
+
+[slow_set]
+(BLANK - the bot says nothing)
+
+[freed]
+(BLANK - the bot says nothing)
+
+[invalid]
+(BLANK - the bot says nothing)
+
+[invalid_group]
+(BLANK - the bot says nothing)
+
+[slow_down]
+(BLANK - the bot says nothing)
+
+[order_not_found]
+Order {order} was not found on your account.
+
+[not_allowed]
+Order {order} is '{status}', so '{action}' is not possible.
+
+[cancel_requested]
+Cancel request for order {order} has been submitted (#{rid}).
+
+[duplicate]
+A '{action}' request for order {order} was already sent recently.
+
+[sent]
+{order} - added for {action}
+
+[forwarded_staff]
+(BLANK - the bot says nothing)
+
+[provider_reply]
+(BLANK - the bot says nothing)
+
+[provider_done]
+(BLANK - the bot says nothing)
+
+[ticket_text]
+Your login code is {code}. It is valid for {minutes} minutes. If this was not you, ignore this message.
+
+[provider_request]
+{ext} {action}
+
+[staff_alert]
+Order ID: {order}
+Provider: {provider}
+Reason: {reason}
+
+[no_refill_service]
+No Refill Service.
+
+[out_of_refill]
+Out of refill period.
+
+[no_refill_accept]
+No Refill Request accept on this order.
+
+[no_partial_accept]
+No Partial Request accept on this order.
+
+[max_attempts]
+You reached the maximum number of attempts. Please contact support.
+
+Whatsapp: +91 97177 11152
+
+[partial_staff]
+(BLANK - the bot says nothing)
+
+[support_contact]
+(BLANK - the bot says nothing)
+
+[bulk_completed]
+{orders} - Order Completed
+
+[bulk_partial]
+{orders} - Order Partialled
+
+[bulk_sent]
+{orders} - added for {action}
+
+[bulk_other]
+{orders} - Order {status}, so '{action}' is not possible.
+
+[bulk_duplicate]
+{orders} - already requested recently.
+
+[bulk_staff]
+(BLANK - the bot says nothing)
+
+[bulk_not_found]
+{orders} - not found on your account.
+
+[bulk_rule]
+{orders} - {message}
+
+[bulk_support]
+(BLANK - the bot says nothing)
+
+[bulk_too_many]
+Your request list is too large (more than 100 orders), so it can’t be submitted in one Request.
+
+[persian_unknown]
+(BLANK - the bot says nothing)
+
+[persian_ticket_speed]
+(BLANK - the bot says nothing)
+
+[persian_ticket_update]
+(BLANK - the bot says nothing)
+
+
+===== EVERY PLACE THE WORD 'ticket' OR 'right now' APPEARS IN THE FILES =====
+
+core.py line 322: say(msg, "creating_ticket")
+core.py line 323: ok = panel.send_ticket(uname, M.get("ticket_text", code=otp, minutes=config.OTP_TTL // 60))
+core.py line 326: return say(msg, "ticket_failed")
+core.py line 328: return say(msg, "otp_sent", username=uname, ticket_id=("" if ok is True else ok))
+core.py line 444: if extra in ("persian_ticket_speed", "persian_ticket_update"):
+core.py line 481: # the Persian bot does not do speed: the customer is told to use a ticket, nothing is sent to it
+core.py line 482: return say(msg, "persian_ticket_speed", order=oid)
+panel.py line 22: self.last_ticket = {}
+panel.py line 45: def send_ticket(self, username, text):
+panel.py line 46: self.last_ticket[username.lower()] = text
+panel.py line 47: print(f"   [MOCK TICKET to {username}] {text}")
+panel.py line 105: def send_ticket(self, username, text):
+panel.py line 106: code, body = self._call("POST", "/tickets/add",
+panel.py line 109: log.error("add ticket failed %s %s", code, body.get("error_message"))
+panel.py line 111: return (body.get("data") or {}).get("ticket_id") or True
+persian_replies.json line 24: "reply": "Refill not possible for this profile right now. Please take partial."
+persian_replies.json line 36: "reply": "Partial Done for {1}\nSend This order on Ticket, For Update"
+persian_replies.json line 56: "reply": "Send Order of This Request to Ticket Right Now"
+
+===== SERVICE RULES (service_rules.json) =====
+
+[
+  {
+    "match": "instagram views",
+    "deny": {
+      "refill": "no_refill_accept",
+      "partial": "no_partial_accept"
+    }
+  }
+]

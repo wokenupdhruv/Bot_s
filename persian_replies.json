@@ -21,7 +21,7 @@
   },
   {
     "match": "refill not possible",
-    "reply": "Refill not possible for this profile right now. Please take partial."
+    "reply": ""
   },
   {
     "match": "drop amount is too low",
@@ -33,7 +33,7 @@
   },
   {
     "match": "partial success to (\\d+) remains",
-    "reply": "Partial Done for {1}\nSend This order on Ticket, For Update"
+    "reply": ""
   },
   {
     "match": "no drop detected",
@@ -53,6 +53,6 @@
   },
   {
     "match": "sent to the .{0,40} team for further review",
-    "reply": "Send Order of This Request to Ticket Right Now"
+    "reply": ""
   }
 ]
