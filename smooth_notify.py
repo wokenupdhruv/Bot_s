@@ -13,9 +13,17 @@ _DEF = {
     "default_cc": "", "skip_methods": ["Bonus", "Fee"], "skip_subjects": ["Support bot verification"],
     "welcome_text": "Hi {name}! 🎉\n\nThanks for joining SmoothSmm. Your account ({username}) is created and ready to use.\n\nIf you ever need help with an order, just message this number with your order ID and what you need, like:\n123456 Refill\n\nHappy growing! 🚀",
     "ticket_text": "📩 We have replied to your ticket #{id} - \"{subject}\".\nLog in to smoothsmm.com and open Tickets to read the answer.",
-    "funds_text": "💰 Payment received!\n\n{amount} has been added to your SmoothSmm balance via {method} ({time}).\nYou can place your orders now.",
+    "funds_text": "{amount} Funds Added !!!\n\nFrom: {method}\n\n{time}\n\nSmooth Smm",
 }
 _cc = [0, dict(_DEF)]
+
+
+def _r2(amount):
+    """Round the number in an amount like '$21.06448' to 2 decimals -> '$21.06'."""
+    try:
+        return re.sub(r"\d[\d,]*(?:\.\d+)?", lambda m: "{:,.2f}".format(float(m.group(0).replace(",", ""))), str(amount), count=1)
+    except Exception:
+        return amount
 
 
 def cfg():
@@ -253,6 +261,7 @@ def poll_once(pn):
             if num:
                 a = x.get("amount") or {}
                 amount = a.get("formatted") or ("%s %s" % (a.get("value", ""), a.get("currency_code", ""))).strip()
+                amount = _r2(amount)
                 enqueue(num, _fill(c["funds_text"], method=method, amount=amount, time=x.get("created") or ""), "funds")
 
 
@@ -392,6 +401,7 @@ def _poll_funds(pn, c, now, max_age):
         if num:
             a = x.get("amount") or {}
             amount = a.get("formatted") or ("%s %s" % (a.get("value", ""), a.get("currency_code", ""))).strip()
+            amount = _r2(amount)
             enqueue(num, _fill(c["funds_text"], method=method, amount=amount, time=x.get("created") or ""), "funds")
 
 
